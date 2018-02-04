@@ -1,0 +1,55 @@
+.content-container{
+  padding-top: 50px;
+}
+
+.input-td{
+  padding: 5px;
+}
+
+.active-tool{
+  border: 5px solid black !important; 
+}
+
+.square{
+  border: 1px solid black;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+}
+
+.div.valign{
+  line-height: 200px
+}
+
+.rectangle{
+  border: 1px solid black;
+  width: 100px;
+  display: inline-block;
+}
+
+.inline-button{
+  display: inline-block;
+  width: 100px;
+  /*padding: 10px;*/
+}
+
+.path{
+  background-color: #00a1e2;
+}
+
+.start{
+  background-color: green;
+}
+
+.end{
+  background-color: red;
+}
+
+.floor{
+  background-color: white;
+}
+
+.shelf{
+  background-color: #999999;
+}
+

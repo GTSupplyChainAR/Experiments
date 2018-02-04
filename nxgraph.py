@@ -1,6 +1,9 @@
 """Graph implementation of warehouse"""
 
 import networkx as nx
+import json
+
+
 # import matplotlib.pyplot as plt
 
 rows, cols = 16, 8  # subdivision of library top-down view into grid
@@ -20,13 +23,13 @@ G.add_edges_from(edges)
 
 
 # Paths
-paths = dict(nx.all_pairs_shortest_path(G))
+all_paths = dict(nx.all_pairs_shortest_path(G))
 x, y = 0, 31
-route = paths[x][y]
+optimal_route = all_paths[x][y]
 
 # Test
 for i in range(1, 129):
-    if i - 1 in route:
+    if i - 1 in optimal_route:
         if i % 8 == 0:
             print("*", end="\n")
         else:
@@ -36,9 +39,16 @@ for i in range(1, 129):
             print(i - 1, end="\n")
         else:
             print(i - 1, end="\t")
-print("Route is {}".format(route))
-print("Path length is {}".format(len(route)))
+print("optimal_route is {}".format(optimal_route))
+print("Path length is {}".format(len(optimal_route)))
 
+# JSON
+path = {
+    "path": optimal_route,
+    "path_length:": len(optimal_route)
+}
+
+json_data = json.dumps(path)
 
 # Visualizing
 # nx.draw_networkx(G)
